@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aula_28_10</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script src="https://ajax.googlepis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        var endpoint = "https://produtoapi.azurewebsites.net/api/"; //inserir o endpoin da api
+        var produtos = [];
+        function carregarProdutos() {
+            $("#produtoBory").empty();
+            produtos = [];
+            // get todos produtos
+            $.get(endpoint + "produto/GetProdutos", function (data) {
+                $each(data, function (i, item) {
+                    var produto = item;
+                    produto.index = i;
+                    produtos.push(produto);
+                    if (item != null) {
+                        $("#produtoBody").append("<tr>");
+                        $("#produtoBody").append("<td>" + item.Id + "</tr>");
+                        $("#produtoBody").append("<td>" + item.Nome + "</tr>");
+                        $("#produtoBody").append("<td><button href='#' onclick=deleteProduto(" + i + "')>Delete</button></td>");
+                        $("#produtoBody").append("<td><button href='#' onclick=editProduto(" + i + "')>Edit</button></td>");
+                        $("#produtoBody").append("</tr>");
+                    }
+                });
+            });
+
+        
+        }
+
+
+
+    </script>
+
+
+<body>
+    <h2>Cadastro de Produto</h2>
+    <input type="hidden" id="txtIndex">
+    <input type="hidden" id="txtId">
+    <p><input type="text" id="txtNome"></p>
+    <input type="button" value="Salvar" id="btnSalvar">
+    <hr>
+    <h2> Produto </h2>
+
+    <table border="1">
+        <thead>
+
+            <th> ID </th>
+            <th> Nome</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </thead>
+        <tbody id="ProdutoBody">
+
+
+
+        </tbody>
+    </table>
+    </script>
+    </head>
+
+</body>
+
+</html>

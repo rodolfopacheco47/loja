@@ -1,0 +1,14 @@
+#container{
+
+    height: 100%;
+    width: 100%;
+    background: 100%;
+    background-color: dimgray;
+
+}
+#menu{
+
+    height: 100%;
+    margin-top: 0px;
+    float: right;
+}

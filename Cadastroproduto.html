@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+     
+    <div class="content">      
+     
+      <!--FORMULÁRIO DE CADASTRO PRODUTOS-->
+      <div id="cadastro">
+        <form method="post" action=""> 
+          <h1>Cadastro de Produtos</h1> 
+           
+          <p> 
+            <label for="nome_pro">Produto</label>
+            <input id="nome_pro" name="nome_pro" required="required" type="text" placeholder="" />
+          </p>
+           
+          <p> 
+            <label for="cod_pro">Codigo Produto</label>
+            <input id="cod_pro" name="cod_pro" required="required" type="number" placeholder=""/> 
+          </p>
+           
+          <p> 
+            <label for="val_pro">Valor Produto</label>
+            <input id="val_pro" name="val_pro" required="required" type="text" placeholder=""/>
+          </p>
+           
+          <p> 
+            <input type="submit" value="Cadastrar Produto"/> 
+          </p>
+           
+    
+        </form>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>
