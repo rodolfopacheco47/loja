@@ -31,10 +31,39 @@
                     }
                 });
             });
+            $(document).ready(function(){
+
+                carregarProdutos();
+            });
 
         
         }
+            $("#btnSalvar").click(function (){
+                var produto = {
+                    nome: $("#txtIndex").val()
 
+                };
+                var metodo = "post";
+                if ($("#txtIndex").val() !== ""){
+                    metodo = "put";
+                    produto.index = $ ("txtIndex").val();
+                    produto.id = $ ("#txtId").val();
+                }
+
+                $("#txtIndex").val("");
+                $("#txtNome").val("");
+                $.ajax({
+                    url: endpoint +"produto",
+                    type: metodo,
+                    contentType: 'application/json',
+                    data: JSON.stringify(produto),
+                    success: function(data){
+                        alert(data);
+                    }
+                    }).done(function() {
+                        carregarProdutos();
+                    });
+            });
 
 
     </script>

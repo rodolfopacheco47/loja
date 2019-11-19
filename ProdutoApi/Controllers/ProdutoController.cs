@@ -3,6 +3,9 @@ using ProdutoApi.Entidades;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FireSharp;
+using FireSharp.Config;
+using FireSharp.Interfaces;
 
 namespace ProdutoApi.Controllers
 {
@@ -10,14 +13,16 @@ namespace ProdutoApi.Controllers
     [ApiController]
     public class ProdutoController : Controller
     {
-        IfirebaseConfig config = new FirebaseConfig
+         IFirebaseConfig config = new FirebaseConfig
+
         {
             AuthSecret = "vOgqS4hgAKLjRnj2r6smSvAsF9qx2ANQbCU3Z4ss",
-            BasePath ="https://aulaterca-a8be0.firebaseapp.com"
+            BasePath ="https://aulaterca-a8be0.firebaseapp.com/"
 
         };
         
         private FirebaseClient client;
+
         public ProdutoController()
         {
             client = new FirebaseClient(config);
@@ -47,46 +52,55 @@ namespace ProdutoApi.Controllers
 
         public async Task<IActionResult> Delete(long id)
         {
-            var clientProduto await client.DeleteAsunc("Produto/" + id)
+            var clientProduto = await client.DeleteAsync("Produto/" + id);
             var result = clientProduto.ResultAs<dynamic>();
 
 
             return Json("Deletado com sucesso!");
         }
 
-        [HttpPut] //atualizar
-
-        public async Task<IActionResult> Update([FromBody] ProdutoEntidade value)
+       [HttpPut]
+        public async Task<IActionResult> Update([FromBody]ProdutoEntidade value)
         {
-            var clientProduto = await client.UpdateAsync("Produto/" + valeu.Index, value);
+            var clientProduto = await client.UpdateAsync("Produto/" + value.Index, value);
             var result = clientProduto.ResultAs<ProdutoEntidade>();
-            
-            return Json("Atualizado com sucesso!");
+            return Json("Atualizado com sucesso");
         }
 
-        [HttpPost] 
 
-        public async Task<IActionResult> Post([FromBody] ProdutoEntidade value)
+        
+[HttpPost]
+        public async Task<IActionResult> Post([FromBody]ProdutoEntidade value)
         {
             var clientProduto = await client.GetAsync("Produto");
-            var result =clientProduto.ResultAs<dynamic>;
+            var result = clientProduto.ResultAs<dynamic>();
 
-            if(result!= null)
-            {F
-                List<ProdutoEntidade> listProdutos = ConvertjsonToList<ProdutoEntidade>(result);
+            if (result != null)
+            {
+                List<ProdutoEntidade> listProdutos = ConvertJsonToList<ProdutoEntidade>(result);
                 var maxId = listProdutos?.Where(c => c != null)?.Max(c => c.Id);
                 value.Id = maxId == null ? 1 : (int)maxId + 1;
-
             }
             else
                 value.Id = 1;
 
-                var response = await client.PushAsync("Produto/",value);
-                var setresult = response.ResultAs<ProdutoEntidade>();
-
-
+            var response = await client.PushAsync("Produto/", value);
+            var setresult = response.ResultAs<ProdutoEntidade>();
             return Json(setresult);
         }
+
+
+        private List<T> ConvertJsonToList<T>(dynamic listaJson)
+        {
+            List<T> result = new List<T>();
+            foreach (var item in listaJson)
+            {
+                T prod = JsonConvert.DeserializeObject<T>(((Newtonsoft.Json.Linq.JContainer)item).First.ToString());
+                result.Add(prod);
+            }
+            return result;
+        }
+
 
         private List<ProdutoEntidade> ListarProdutos()
         {
