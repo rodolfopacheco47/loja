@@ -1,0 +1,61 @@
+.container_13{
+    margin: auto;
+    
+}
+.valor{
+
+    color: red;
+
+}
+
+.txt_set{
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.painel_vendas{
+      
+    padding: 10px;
+    float: left;
+    padding: inherit;
+    width: 250px;   
+    margin-left: 5px;
+    height: 100%;
+    display: inline-block
+}
+#bl_vendas{
+    background: white;
+    margin: auto;
+    padding: 15px;
+    border-radius: 1px;
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    
+}
+#bl_vendas_interno{
+    padding-top: 10px;
+    height: 100%;
+    display: inline-block
+}
+
+#head_13{
+    color: white;
+    text-align: center;
+}
+#body_13{
+    background: rgb(0, 191, 255);
+}
+
+section{
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: auto;
+    width: 500px;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}

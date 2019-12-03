@@ -4,32 +4,478 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Shop Cd</title>
+    <title>DGLR Disc</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src='script.js'></script>
+    <script src='js/bootstrap.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body_13">
     <div>
         <div>
             <div>
+                <div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div style="padding-left: 4%;">
+                            <a class="navbar-brand" href="index.html"><img src="icons/logo.png"
+                                    style="height: 30px; width: 30px;"> DGLR Disc - Oferencendo as melhores musicas há
+                                você.</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
+                                aria-expanded="false" aria-label="Alterna navegação">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                        <div style="padding-left: 40%;">
+                            <div>
+                                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item active">
 
+                                            <a class="nav-link" href="Cadastro.html"><img src="icons/login.png"
+                                                    style="height: 16px; width: 16px;">Login<span
+                                                    class="sr-only">(página
+                                                    atual)</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="modal" data-target="#carrinho"
+                                                onclick=Carrinho()><img src="icons/carrinho.png"
+                                                    style="height: 18px; width: 18px;"><sup style="background: red;"
+                                                    class="rounded-circle"><i
+                                                        style="font-size: 10px; color:white;">12</i></sup></a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                <img src="icons/config.svg" style="height: 16px;" width="16px">
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="Cadastroproduto.html">Cadastro
+                                                    Produtos</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Sobre</a>
+                                            </div>
+                                        </li>
 
+                                    </ul>
+                                    <!--<form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+                                aria-label="Pesquisar">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                        </form>-->
+                                </div>
+                            </div>
+                    </nav>
+                </div>
             </div>
-            <div>
-               
-                <a href="Cadastro.html"><input type="button" value="Cadastro Usuário" /></a>
-                <a href="Cadastroproduto.html"><input type="button" value="Cadastro Produto" /></a>
-                <a href="compra.html"><input type="button" value="Comprar" /></a>       
-
-
-            </div>
-
-
-
         </div>
     </div>
+
+    <div class="container_13">
+        <div id="bl_vendas">
+            <div style="padding-left: 30%; background-color: white;">
+                <nav id="navbar-example2" class="navbar navbar-light bg-light" style="background-color: white;">
+                    <ul class="nav nav-pills"  style="background-color: white;">
+                        <li class="nav-item"  style="background-color: white;">
+                            <a class="nav-link" href="#sugestoes"  style="background-color: white;">Sugestões</a>
+                        </li>
+                        <li class="nav-item"  style="background-color: white;">
+                            <a class="nav-link" href="#maisvendidos">Mais vendidos</a>
+                        </li>
+                        <li class="nav-item dropdown"  style="background-color: white;">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">Categorias</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#Axe">Axé</a>
+                                <a class="dropdown-item" href="#Funk">Funk</a>
+                                <a class="dropdown-item" href="#Jazz">Jazz</a>
+                                <a class="dropdown-item" href="#Rap">Rap</a>
+
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#mais">Mais</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+
+                <div id="bl_vendas_interno">
+
+                    <div id="Rap" class="txt_set"> Rap - Seleção de discos nacionais e internacionias</div>
+                    <hr>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/racionais.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 100,00</strong>
+                            <button onclick=Subtrair(100,1) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(100,1,1) style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant1"></div>
+
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/download.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 222,00</strong>
+                            <button onclick=Subtrair(222,2) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(222,2,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant2"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/images (1).jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 150,00</strong>
+                            <button onclick=Subtrair(150,3) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(150,3,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant3"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/images.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 120,00</strong>
+                            <button onclick=Subtrair(120,4) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(120,4,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant4"></div>
+                        </div>
+                    </div>
+                    <div id="Funk" class="txt_set"> Funk - Melhores do momento</div>
+                    <hr>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/funk1.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 90,00</strong>
+                            <button onclick=Subtrair(90,5) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(90,5,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant5"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/funk2.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 80,00</strong>
+                            <button onclick=Subtrair(80,6) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(80,6,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant6"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/funk3.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 50,00</strong>
+                            <button onclick=Subtrair(50,7) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(50,7,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant7"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/funk4.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 60,00</strong>
+                            <button onclick=Subtrair(60,8) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(60,8,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant8"></div>
+                        </div>
+                    </div>
+                    <div id="Axe" class="txt_set"> Axe - Melhores do carnaval </div>
+                    <hr>
+
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/axe4.png" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 85,00</strong>
+                            <button onclick=Subtrair(85,9) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(85,9,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant9"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                        <div style="border-radius: 5px; height: 200px; width: 200px;">
+                            <figure>
+                                <img src="img/axe3.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                    style="border-radius: 60px;">
+                            </figure>
+                        </div>
+
+                        <div style=" height: 40px; width: 200px;">
+                            <strong>R$ 95,00</strong>
+                            <button onclick=Subtrair(95,10) style="float: right;"
+                                class=" btn btn-primary-outline">-</button>
+                            <button onclick=Somar(95,10,1); style="float: right;"
+                                class=" btn btn-primary-outline">+</button>
+                            <div id="quant10"></div>
+                        </div>
+                    </div>
+                    <div class="painel_vendas">
+                            <div style="border-radius: 5px; height: 200px; width: 200px;">
+                                <figure>
+                                    <img src="img/axe2.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                        style="border-radius: 60px;">
+                                </figure>
+                            </div>
+    
+                            <div style=" height: 40px; width: 200px;">
+                                <strong>R$ 105,00</strong>
+                                <button onclick=Subtrair(105,11) style="float: right;"
+                                    class=" btn btn-primary-outline">-</button>
+                                <button onclick=Somar(105,11,1); style="float: right;"
+                                    class=" btn btn-primary-outline">+</button>
+                                <div id="quant11"></div>
+                            </div>
+                        </div>
+                        <div class="painel_vendas">
+                                <div style="border-radius: 5px; height: 200px; width: 200px;">
+                                    <figure>
+                                        <img src="img/ace1.jpg" alt="The Pulpit Rock" width="199" height="199"
+                                            style="border-radius: 60px;">
+                                    </figure>
+                                </div>
+        
+                                <div style=" height: 40px; width: 200px;">
+                                    <strong>R$ 75,00</strong>
+                                    <button onclick=Subtrair(75,12) style="float: right;"
+                                        class=" btn btn-primary-outline">-</button>
+                                    <button onclick=Somar(75,12,1); style="float: right;"
+                                        class=" btn btn-primary-outline">+</button>
+                                    <div id="quant12"></div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+            <div class="modal fade" id="carrinho" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalLongoExemplo">Carrinho</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="res"
+                                style="font-size: 50px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+                                Sem Produto
+                            </div>
+                            <br>
+                            <div style="width: 300px;" id="mdo"
+                                style="font-size: 50px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+                                Parcelamento
+                                <select id="parcelamento">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+
+                            </div>
+
+
+                            <div id=pag
+                                style="font-size: 30px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                            <button type="button" class="btn btn-primary" onclick=Pagamento()>Pagamento</button>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 </body>
+<footer>
+
+    <script>
+
+        var res = document.getElementById("res")
+        var produto1
+        var valor_final = 0
+        var valor = 0
+        var valor_produto = []
+        var quant_produto = []
+        var quant = []
+        var id
+        var uni = 0
+        var unid = 0
+
+
+
+
+        function Somar(produto1, id, uni) {
+            i = id
+            valor = produto1 + valor_final
+            valor_final = valor
+            res.innerHTML = ("R$ " + valor)
+
+            quant[i] = uni + unid
+            unid = quant[i]
+            document.getElementById("quant" + i).innerHTML = (quant[id] + " UNI")
+
+        }
+        function Subtrair(produto1, id) {
+            i = id
+            if (valor > 0) {
+                valor = valor - produto1
+                valor_final = valor
+                quant[i]--
+                if (valor < 0) {
+                    valor = 0
+                } else {
+                    res.innerHTML = ("R$ " + valor)
+                    document.getElementById("quant" + i).innerHTML = (quant[i] + " UNI")
+
+                }
+            }
+
+        }
+
+
+        function Pagamento() {
+            var parcela = Number(parcelamento.value)
+            if (valor > 0) {
+                switch (parcela) {
+                    case 1:
+                        document.getElementById("pag").innerHTML = ("Pagamento confirmado com Sucesso. R$ " + valor + ",00")
+                        break;
+                    case 2:
+                        parcelado = valor / 2
+                        document.getElementById("pag").innerHTML = ("Pagamento confirmado com Sucesso. 2 x R$" + parcelado + ",00")
+                        break;
+                    case 3:
+                        parcelado = valor / 3
+                        document.getElementById("pag").innerHTML = ("Pagamento confirmado com Sucesso. 3 x R$" + parcelado + ",00")
+
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }
+
+        }
+
+
+
+
+
+    </script>
+    <a class="btn btn-social-icon btn-twitter">
+        <span class=""></span>
+        <img src="icons/twitter.png " width=40px; height=40px;>
+    </a>
+
+    <a class=" btn btn-social-icon btn-facebook">
+        <span class=""></span>
+        <img src="icons/facebook.png " width=40px; height=40px;>
+    </a>
+
+    <a class=" btn btn-social-icon btn-instagram>
+        <span class=""></span>
+        <img src=" icons/instagram.png " width=40px; height=40px; >
+         </a>
+         
+     <a class=" btn btn-social-icon btn-whatsapp">
+        <span class=""></span>
+        <img src="icons/whatsapp.png " width=40px; height=40px;>
+    </a>
+</footer>
 
 </html>
